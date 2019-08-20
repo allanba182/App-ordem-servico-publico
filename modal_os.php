@@ -26,7 +26,7 @@
 
               <div class="col-md-4 ml-auto">
                 <label for="garantia" class="col-form-label">Data Garantia: </label>
-                <input type="date" class="form-control" id="garantia" name="data_garantia">
+                <input type="date" class="form-control" id="garantia" name="data_garantia" required>
               </div>
             </div>
 
@@ -60,15 +60,15 @@
 
               <div class="col-md-6">
                 <label for="Reparos" class="col-form-label">Reparos realizados:</label>
-                <textarea class="form-control" id="reparos" name="reparos"></textarea>
+                <textarea class="form-control" id="reparos" name="reparos_realizados" required></textarea>
               </div>
             </div>
 
             <br>
 
             <div class="form-group">
-              <label for="arquivo" class="col-form-label">Anexo:</label>
-              <input type="file" name="arquivo" class="form-control-file" id="anexo">
+              <label for="Anexo" class="col-form-label">Anexo:</label>
+              <input type="file" name="anexo" class="form-control-file" id="anexo" required>
             </div>
 
           </div>
