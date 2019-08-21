@@ -96,7 +96,8 @@
 								<div class="col-sm-2 mt-2 d-flex justify-content-between">
 									<i class="fas fa-trash-alt fa-md text-danger"></i>
 									<i class="fas fa-check-square fa-md text-success" data-toggle="modal"
-										data-target="#modalOs" data-id="<?= $os['id_os'] ?>"
+										data-target="#modalOs" 
+										data-id="<?= $os['id_os'] ?>"
 										data-abertura="<?= $os['data_abertura'] ?>"
 										data-garantia="<?= $os['data_garantia'] ?>"
 										data-serie="<?= $os['numero_serie'] ?>" data-tipo="<?= $os['tipo'] ?>"
