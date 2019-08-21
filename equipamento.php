@@ -92,7 +92,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form class="form-group" action="usuario.controller.php?acao=atualizar" method="POST">
+				<form class="form-group" action="equipamento.controller.php?acao=atualizar" method="POST">
 
 					<div class="container-fluid">
 
