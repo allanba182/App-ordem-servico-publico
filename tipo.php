@@ -86,7 +86,7 @@
 
 							<div class="col-md-9">
 								<label for="tipo" class="col-form-label">Tipo: </label>
-								<input type="text" class="form-control" id="tipo" name="tipo">
+								<input type="text" class="form-control" id="tipo" name="tipo" required>
 							</div>
 						</div>
 						<br>						
