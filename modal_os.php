@@ -66,10 +66,17 @@
 
             <br>
 
-            <div class="form-group">
-              <label for="Anexo" class="col-form-label">Anexo:</label>
-              <input type="file" name="anexo" class="form-control-file" id="anexo" required>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="Anexo" class="col-form-label">Anexo:</label>
+                <input type="file" name="anexo" class="form-control-file" id="anexo" required>
+              </div>
+              <div class="col-md-3 ml-auto">
+                <label for="Reparos" class="col-form-label">Valor :</label>
+                <input class="form-control" name="valor" type="number" min="1" step="any">
+              </div>
             </div>
+            <br>
 
           </div>
           <div class="modal-footer">

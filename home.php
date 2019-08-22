@@ -35,7 +35,7 @@
 
 	<style>
 		.pagina {
-			margin: 20px 20px;
+			margin-bottom: 20px;
 		}
 
 		a {
@@ -87,26 +87,38 @@
 					<div class="row">
 						<div class="col">
 							<h4>OS's Pendentes</h4>
-							<hr />
+							<br>
+							<div class="row table-responsive">
+								<div class="col">
+									<table class="table table-striped table-hover ">
+										<thead>
+											<tr>
+												<th>Tipo</th>
+												<th>Nome</th>
+												<th>Nº Série</th>
+												<th>Prestador</th>
+											</tr>
+										</thead>
+										<tbody class="overflow-auto">
 
-							<?php foreach ($osPendente as $indice => $os) { ?>
-							<div class="row mb-3 d-flex align-items-center tarefa">
-								<div class="col-sm-9"> <strong> <?= $os['id_os'] ?> : <?= $os['tipo'] ?></strong>:
-									<?= $os['numero_serie'] ?> || <strong> <?= $os['fantasia']?> </strong></div>
-								<div class="col-sm-2 mt-2 d-flex justify-content-between">
-									<i class="fas fa-trash-alt fa-md text-danger"></i>
-									<i class="fas fa-check-square fa-md text-success" data-toggle="modal"
-										data-target="#modalOs" 
-										data-id="<?= $os['id_os'] ?>"
-										data-abertura="<?= $os['data_abertura'] ?>"
-										data-garantia="<?= $os['data_garantia'] ?>"
-										data-serie="<?= $os['numero_serie'] ?>" data-tipo="<?= $os['tipo'] ?>"
-										data-prestador="<?= $os['fantasia'] ?>" data-motivo="<?= $os['motivo'] ?>"></i>
+											<?php foreach ($osPendente as $indice => $os) { ?>
+											<tr data-toggle="modal" data-target="#modalOs" data-id="<?= $os->id_os ?>"
+												data-abertura="<?= $os->data_abertura ?>"
+												data-garantia="<?= $os->data_garantia ?>"
+												data-serie="<?= $os->numero_serie ?>" data-tipo="<?= $os->tipo ?>"
+												data-prestador="<?= $os->fantasia ?>" data-motivo="<?= $os->motivo ?>">
+											
+												<td><?= $os->tipo ?></td>
+												<td><?= $os->nome_equipamento?></td>
+												<td><?= $os->numero_serie ?></td>
+												<td><?= $os->fantasia ?></td>
+											</tr>
+											<?php } ?>
+
+										</tbody>
+									</table>
 								</div>
 							</div>
-							<hr />
-							<?php }?>
-
 						</div>
 					</div>
 				</div>
@@ -117,19 +129,32 @@
 					<div class="row">
 						<div class="col">
 							<h4>Garantia de Serviços</h4>
-							<hr />
-
-							<?php foreach ($osGarantia as $indice => $garantia) { ?>
-								<div class="row mb-3 d-flex align-items-center tarefa">
-								<div class="col-sm-9"> <strong> <?= $garantia['id_os'] ?> : <?= $garantia['tipo'] ?></strong>:
-									<?= $os['numero_serie'] ?> || <strong> <?= $garantia['fantasia']?> </strong></div>
-								<div class="col-sm-2 mt-2 d-flex justify-content-between">
-									<i class="fas fa-search fa-sm text-info"></i>
+							<br>
+							<div class="row table-responsive">
+								<div class="col">
+									<table class="table table-striped table-hover ">
+										<thead>
+											<tr>
+												<th>Tipo</th>
+												<th>Nome</th>
+												<th>Nº Série</th>
+												<th>Garantia</th>
+											</tr>
+										</thead>
+										<tbody class="overflow-auto">
+											
+											<?php foreach ($osGarantia as $indice => $garantia) { ?>
+											<tr>
+												<td><?= $garantia->tipo ?></td>
+												<td><?= $garantia->nome_equipamento?></td>
+												<td><?= $garantia->numero_serie ?></td>
+												<td><?= $garantia->data_garantia ?></td>
+											</tr>
+											<?php } ?>
+										</tbody>
+									</table>
 								</div>
 							</div>
-							<hr />
-							<?php }?>
-
 						</div>
 					</div>
 				</div>
@@ -137,8 +162,6 @@
 				<!-- MODAL BOOTSTRAP -->
 				<?php include './modal_os.php'; ?>
 			</div>
-
-
 		</div>
 	</div>
 </body>
