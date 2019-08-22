@@ -11,7 +11,6 @@
 				<table class="table table-striped table-hover ">
 					<thead>
 						<tr>
-							<th>ID</th>
 							<th>Tipo</th>
 						</tr>
 					</thead>
@@ -20,7 +19,6 @@
 						<tr data-toggle="modal" data-target="#modalEditar" data-id="<?= $tipo->id_tipo ?>"
 							data-tipo="<?= $tipo->tipo ?>">
 
-							<td><?= $tipo->id_tipo ?></td>
 							<td><?= $tipo->tipo ?></td>
 						</tr>
 						<?php } ?>
