@@ -98,12 +98,12 @@
 
 							<div class="col-md-9">
 								<label for="Fantasia" class="col-form-label">Fantasia: </label>
-								<input type="text" class="form-control" id="fantasia" name="fantasia">
+								<input type="text" class="form-control" id="fantasia" name="fantasia" required>
 							</div>
 							<br>
 							<div class="col-md-12">
 								<label for="Email" class="col-form-label">Email: </label>
-								<input type="text" class="form-control" id="email" name="email">
+								<input type="text" class="form-control" id="email" name="email" required>
 							</div>
 							<br>
 						</div>
