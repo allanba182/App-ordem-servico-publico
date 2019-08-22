@@ -3,6 +3,36 @@
 	require './usuario.controller.php';
 
 ?>
+
+<script>
+
+	function editarSenha()
+	{
+		NovaSenha = document.getElementById('editar_senha').value;
+		CNovaSenha = document.getElementById('editar_confirmar_senha').value;
+
+		if (NovaSenha != CNovaSenha) {
+			alert("SENHAS DIFERENTES!\nFAVOR DIGITAR SENHAS IGUAIS"); 
+		}else{
+			document.FormEditar.submit();
+		}
+	}
+
+	function cadastrarSenha()
+	{
+		NovaSenha = document.getElementById('cadastrar_senha').value;
+		CNovaSenha = document.getElementById('cadastrar_confirmar_senha').value;
+
+		if (NovaSenha != CNovaSenha) {
+			alert("SENHAS DIFERENTES!\nFAVOR DIGITAR SENHAS IGUAIS"); 
+		}else{
+			document.FormCadastrar.submit();
+		}
+	}
+
+
+</script>
+
 <div class="col-md-9">
 	<div class="container pagina">
 		<h4>Cadastro de Usuario</h4>
@@ -49,7 +79,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="usuario.controller.php?acao=inserir" method="post">
+				<form action="usuario.controller.php?acao=inserir" method="post" id="FormCadastrar" name="FormCadastrar" >
 					<div class="form-group">
 						<label>Nome:</label>
 						<input name="nome" type="text" class="form-control" placeholder="Exemplo: Fulano de Tal"
@@ -67,16 +97,16 @@
 					</div>
 					<div class="form-group">
 						<label>Senha:</label>
-						<input name="senha" type="password" class="form-control" placeholder="Maximo 8 caracteres"
+						<input name="senha" id="cadastrar_senha" type="password" class="form-control" placeholder="Maximo 8 caracteres"
 							required>
 					</div>
 					<div class="form-group">
 						<label>Confirme a Senha:</label>
-						<input name="senha" type="password" class="form-control" placeholder="Maximo 8 caracteres"
+						<input name="confirmar_senha" id="cadastrar_confirmar_senha" type="password" class="form-control" placeholder="Maximo 8 caracteres"
 							required>
 					</div>
 					<div class="modal-footer">
-						<button type="submit" class="btn btn-success">Cadastrar</button>
+						<button type="button" class="btn btn-success" onClick="cadastrarSenha()">Cadastrar</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
 					</div>
 				</form>
@@ -97,7 +127,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form class="form-group" action="usuario.controller.php?acao=atualizar" method="POST">
+				<form class="form-group" action="usuario.controller.php?acao=atualizar" method="POST" id="FormEditar" name="FormEditar">
 
 					<div class="container-fluid">
 
@@ -109,7 +139,7 @@
 
 							<div class="col-md-9">
 								<label for="nome" class="col-form-label">Nome: </label>
-								<input type="text" class="form-control" id="nome" name="nome">
+								<input type="text" class="form-control" id="nome" name="nome" required>
 							</div>
 
 						</div>
@@ -117,28 +147,35 @@
 						<br>
 
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-5">
 								<label for="Usuario" class="col-form-label">Usuario:</label>
-								<input type="text" class="form-control" id="usuario" name="usuario">
+								<input type="text" class="form-control" id="usuario" name="usuario" required>
 							</div>
 
-							<div class="col-md-6">
-								<label for="Email" class="col-form-label">Senha:</label>
-								<input type="password" class="form-control" id="senha" name="senha">
+							<div class="col-md-7">
+								<label for="Email" class="col-form-label">Email:</label>
+								<input type="email" class="form-control" id="email" name="email" required>
 							</div>
 						</div>
 						<br>
 
 						<div class="row">
-							<div class="col-md-12">
-								<label for="Email" class="col-form-label">Email:</label>
-								<input type="email" class="form-control" id="email" name="email">
+
+							<div class="col-md-6">
+								<label for="Nova Senha" class="col-form-label">Nova Senha:</label>
+								<input type="password" class="form-control" id="editar_senha" name="senha" required>
 							</div>
+
+							<div class="col-md-6">
+								<label for="Confirmar Senha" class="col-form-label">Confirmar Senha:</label>
+								<input type="password" class="form-control" id="editar_confirmar_senha" name="confirmar_senha" required>
+							</div>
+
 						</div>
 						<br>
 					</div>
 					<div class="modal-footer">
-						<button type="submit" class="btn btn-primary">Salvar</button>
+						<button type="button" class="btn btn-primary" onClick="editarSenha()" >Salvar</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					</div>
 
