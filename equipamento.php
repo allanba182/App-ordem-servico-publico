@@ -14,7 +14,8 @@
 				<table class="table table-striped table-hover ">
 					<thead>
 						<tr>
-							<th>Tipo</th>
+							<th class="w-30">Tipo</th>
+							<th>Nome</th>
 							<th>Nº. Série</th>
 						</tr>
 					</thead>
@@ -23,9 +24,11 @@
 						<tr data-toggle="modal" data-target="#modalEditar" 
 						data-id="<?= $equipamento->id_equipamento ?>"
 						data-tipo="<?= $equipamento->tipo ?>" 
+						data-nome="<?= $equipamento->nome ?>"
 						data-numero_serie="<?= $equipamento->numero_serie ?>">
 
-							<td><?= $equipamento->tipo ?></td>
+							<td class="w-30"><?= $equipamento->tipo ?></td>
+							<td><?= $equipamento->nome ?></td>
 							<td><?= $equipamento->numero_serie ?></td>
 						</tr>
 						<?php } ?>
@@ -52,15 +55,23 @@
 			</div>
 			<div class="modal-body">
 				<form action="equipamento.controller.php?acao=inserir" method="post">
+					
+					<div class="form-group">
+						<label>Nome:</label>
+						<input name="nome" type="text" class="form-control"
+							placeholder="Exemplo: Dell Optiplex, HP Deskjet" required>
+					</div>
+
 					<div class="form-group">
 						<label>Numero de série:</label>
 						<input name="serie" type="text" class="form-control"
 							placeholder="Exemplo: SW06124567, V556009844" required>
 					</div>
+
 					<div class="form-group">
 						<label>Tipo:</label>
 						<select name="tipo" class="form-control" required>
-
+						<option disabled selected value> -- Selecione uma opção -- </option>
 							<!-- POPULANDO SELECT COM TIPOS CADASTRADOS NO BANCO -->
 							<?php foreach ($tipos as $indice => $tipo) { ?>
 
@@ -110,13 +121,19 @@
 						</div>
 
 						<br>
-
+						
+						<div class="row">
+							<div class="col-md-12">
+								<label for="Nome" class="col-form-label">Nome:</label>
+								<input type="text" class="form-control" id="nome" name="nome" required>
+							</div>
+						</div>
+						<br>
 						<div class="row">
 							<div class="col-md-12">
 								<label for="Numero Serie" class="col-form-label">Numero de Série:</label>
-								<input type="text" class="form-control" id="numero_serie" name="numero_serie">
+								<input type="text" class="form-control" id="numero_serie" name="numero_serie" required>
 							</div>
-
 						</div>
 						<br>
 
@@ -137,6 +154,7 @@
 		var button = $(event.relatedTarget) // Button that triggered the modal
 		var id = button.data('id')
 		var tipo = button.data('tipo')
+		var nome = button.data('nome')
 		var numero_serie = button.data('numero_serie')
 		var modal = $(this)
 		modal.find('#modalEditarLabel').text('Editar equipamento : ' + numero_serie)
@@ -144,6 +162,8 @@
 		modal.find('#id').val(id)
 
 		modal.find('#tipo').val(tipo)
+
+		modal.find('#nome').val(nome)
 
 		modal.find('#numero_serie').val(numero_serie)
 
