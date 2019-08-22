@@ -10,9 +10,9 @@
 				<table class="table table-striped table-hover ">
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Fantasia</th>
-							<th>Email</th>
+							<th class="w-30">Fantasia</th>
+							<th class="w-50">Email</th>
+							<th> Email Automatico</th>
 						</tr>
 					</thead>
 					<tbody class="overflow-auto">
@@ -20,9 +20,9 @@
 						<tr data-toggle="modal" data-target="#modalEditar" data-id="<?= $prestador->id_prestador ?>"
 							data-fantasia="<?= $prestador->fantasia ?>" data-email="<?= $prestador->email ?>" data-envia_email="<?= $prestador->envia_email ?>">
 
-							<td><?= $prestador->id_prestador ?></td>
-							<td><?= $prestador->fantasia ?></td>
-							<td><?= $prestador->email ?></td>
+							<td class="w-30"><?= $prestador->fantasia ?></td>
+							<td class="w-50"><?= $prestador->email ?></td>
+							<td><?= $prestador->envia_email == 'true' ? 'Sim' : 'Não'; ?> </td>
 						</tr>
 						<?php } ?>
 

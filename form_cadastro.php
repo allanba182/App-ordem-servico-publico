@@ -62,6 +62,22 @@
             width: var(--table-width);
             table-layout:fixed;
         }
+
+        .w-30 {
+        width: 30%;
+        }
+
+        .w-10 {
+        width: 10%
+        }
+
+        .w-50 {
+        width: 50%;
+        }
+
+        table {
+        table-layout:fixed;/* will switch the table-layout algorythm */
+        }
         
     </style>
 
