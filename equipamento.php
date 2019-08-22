@@ -133,6 +133,7 @@
 							<div class="col-md-12">
 								<label for="Numero Serie" class="col-form-label">Numero de Série:</label>
 								<input type="text" class="form-control" id="numero_serie" name="numero_serie" required>
+								<input type="hidden" class="form-control" id="numero_serie_antigo" name="numero_serie_antigo">
 							</div>
 						</div>
 						<br>
@@ -161,11 +162,13 @@
 
 		modal.find('#id').val(id)
 
-		modal.find('#tipo').val(tipo)
-
 		modal.find('#nome').val(nome)
 
+		modal.find('#tipo').val(tipo)
+
 		modal.find('#numero_serie').val(numero_serie)
+
+		modal.find('#numero_serie_antigo').val(numero_serie)
 
 	})
 </script>

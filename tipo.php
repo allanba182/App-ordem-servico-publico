@@ -85,6 +85,7 @@
 							<div class="col-md-9">
 								<label for="tipo" class="col-form-label">Tipo: </label>
 								<input type="text" class="form-control" id="tipo" name="tipo" required>
+								<input type="hidden" class="form-control" id="tipo_antigo" name="tipo_antigo">
 							</div>
 						</div>
 						<br>						
@@ -112,6 +113,8 @@
 		modal.find('#id').val(id)
 
 		modal.find('#tipo').val(tipo)
+
+		modal.find('#tipo_antigo').val(tipo)
 
 	})
 </script>
