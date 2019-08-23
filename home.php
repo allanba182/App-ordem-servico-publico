@@ -144,7 +144,17 @@
 										<tbody class="overflow-auto">
 											
 											<?php foreach ($osGarantia as $indice => $garantia) { ?>
-											<tr>
+											<tr data-toggle="modal" data-target="#modalOsFinalizado" data-id="<?= $garantia->id_os ?>"
+												data-abertura="<?= $garantia->data_abertura ?>"
+												data-garantia="<?= $garantia->data_garantia ?>"
+												data-serie="<?= $garantia->numero_serie ?>" 
+												data-tipo="<?= $garantia->tipo ?>"
+												data-prestador="<?= $garantia->fantasia ?>" 
+												data-motivo="<?= $garantia->motivo ?>" 
+												data-reparos="<?= $garantia->reparos_realizados ?>"
+												data-valor="<?= $garantia->valor ?>"
+												data-anexo="<?= $garantia->anexo ?>">
+
 												<td><?= $garantia->tipo ?></td>
 												<td><?= $garantia->nome_equipamento?></td>
 												<td><?= $garantia->numero_serie ?></td>
@@ -153,14 +163,19 @@
 											<?php } ?>
 										</tbody>
 									</table>
+									
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- MODAL BOOTSTRAP -->
-				<?php include './modal_os.php'; ?>
+				<!-- MODAL OS's PENDENTES -->
+				<?php include './modal_os.php' ?>
+
+				<!-- MODAL OS's FINALIZADAS -->
+				<?php include './modal_os_finalizado.php' ?> 
+
 			</div>
 		</div>
 	</div>
