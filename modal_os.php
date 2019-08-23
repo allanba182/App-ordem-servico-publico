@@ -69,7 +69,7 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="Anexo" class="col-form-label">Anexo:</label>
-                <input type="file" name="anexo" class="form-control-file" id="anexo" required>
+                <input type="file" name="anexo" class="form-control-file" id="anexo" accept="application/pdf" required>
               </div>
               <div class="col-md-3 ml-auto">
                 <label for="Reparos" class="col-form-label">Valor :</label>
@@ -119,5 +119,18 @@
 
     modal.find('.modal-body #motivo').val(motivo)
   })
+
+  $(function(){
+        $("#anexo").on('change', function(event) {
+
+            var file = event.target.files[0];
+
+            if(!file.type.match('application/pdf')) {
+                alert("Apenas arquivos PDF");
+                $("#anexo").val('')
+                return;
+            }
+        });
+    });
 </script>
 
