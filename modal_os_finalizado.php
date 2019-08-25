@@ -12,8 +12,7 @@
 
       <div class="modal-body ">
 
-        <form class="form-group" action="ordem_servico.controller.php?acao=atualizar" method="POST"
-          enctype="multipart/form-data">
+        <form class="form-group" action="ordem_servico.controller.php?acao=atualizar" method="POST">
 
           <div class="container-fluid">
 
@@ -104,7 +103,7 @@
     var valor = button.data('valor')
     var anexo = button.data('anexo')
 
-    var localAnexo = '../../OS/' + tipo + '/' + numero_serie + '/' + anexo
+    var localAnexo = './OS/' + tipo + '/' + numero_serie + '/' + anexo
 
     var modal = $(this)
 
