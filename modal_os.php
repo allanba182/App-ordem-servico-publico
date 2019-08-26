@@ -73,7 +73,7 @@
               </div>
               <div class="col-md-3 ml-auto">
                 <label for="Reparos" class="col-form-label">Valor :</label>
-                <input class="form-control" name="valor" type="number" min="1" step="any">
+                <input class="form-control" name="valor" id="valor" type="number" min="1" step="any">
               </div>
             </div>
             <br>
@@ -81,6 +81,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Finalizar O.S.</button>
+            <button type="button" class="btn btn-danger">Excluir</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           </div>
 
@@ -100,6 +101,8 @@
     var tipo = button.data('tipo')
     var prestador = button.data('prestador')
     var motivo = button.data('motivo')
+    var reparos = button.data('reparos')
+    var valor = button.data('valor')
 
     var modal = $(this)
 
@@ -118,6 +121,10 @@
     modal.find('.modal-body #prestador').val(prestador)
 
     modal.find('.modal-body #motivo').val(motivo)
+
+    modal.find('.modal-body #reparos').val(reparos)
+
+    modal.find('.modal-body #valor').val(valor)
   })
 
   $(function(){

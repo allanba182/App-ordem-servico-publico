@@ -105,8 +105,13 @@
 											<tr data-toggle="modal" data-target="#modalOs" data-id="<?= $os->id_os ?>"
 												data-abertura="<?= $os->data_abertura ?>"
 												data-garantia="<?= $os->data_garantia ?>"
-												data-serie="<?= $os->numero_serie ?>" data-tipo="<?= $os->tipo ?>"
-												data-prestador="<?= $os->fantasia ?>" data-motivo="<?= $os->motivo ?>">
+												data-serie="<?= $os->numero_serie ?>" 
+												data-tipo="<?= $os->tipo ?>"
+												data-prestador="<?= $os->fantasia ?>" 
+												data-motivo="<?= $os->motivo ?>"
+												data-reparos="<?= $os->reparos_realizados ?>"
+												data-valor="<?= $os->valor ?>">
+												
 											
 												<td><?= $os->tipo ?></td>
 												<td><?= $os->nome_equipamento?></td>
