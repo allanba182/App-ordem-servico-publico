@@ -1,3 +1,14 @@
+<script>
+
+      function remover()
+      {
+        var os = document.getElementById("id_os").value;
+        window.location = "ordem_servico.controller.php?acao=remover&id="+os;
+
+      }
+    
+</script>
+
 <!-- MODAL PARA OS's PENDENTES  -->
 <div class="modal fade" id="modalOs" tabindex="-1" role="dialog" aria-labelledby="modalOsLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
@@ -81,7 +92,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Finalizar O.S.</button>
-            <button type="button" class="btn btn-danger">Excluir</button>
+            <button type="button" class="btn btn-danger" onclick="remover()">Excluir</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           </div>
 
