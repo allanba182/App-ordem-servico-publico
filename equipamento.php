@@ -6,6 +6,17 @@
     
 ?>
 
+<script>
+
+      function remover()
+      {
+        var os = document.getElementById("id").value;
+        window.location = "equipamento.controller.php?acao=remover&id="+os;
+
+      }
+    
+</script>
+
 <div class="col-md-9">
 	<div class="container pagina">
 		<h4>Cadastro de Equipamento</h4>
@@ -141,6 +152,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="submit" class="btn btn-primary">Salvar</button>
+						<button type="button" class="btn btn-danger" onclick="remover()">Excluir</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					</div>
 
