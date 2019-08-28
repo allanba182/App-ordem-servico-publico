@@ -2,6 +2,17 @@
 	$acao = 'recuperar';
 	require './prestador.controller.php';
 ?>
+
+<script>
+
+      function remover()
+      {
+        var os = document.getElementById("id").value;
+        window.location = "prestador.controller.php?acao=remover&id="+os;
+
+      }
+    
+</script>
 <div class="col-md-9">
 	<div class="container pagina">
 		<h4>Cadastro de Prestadores de Serviço</h4>
@@ -118,6 +129,7 @@
 
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary">Salvar</button>
+							<button type="button" class="btn btn-danger" onclick="remover()">Excluir</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 						</div>
 				</form>

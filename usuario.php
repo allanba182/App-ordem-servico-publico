@@ -31,6 +31,14 @@
 	}
 
 
+      function remover()
+      {
+        var os = document.getElementById("id").value;
+        window.location = "usuario.controller.php?acao=remover&id="+os;
+
+      }
+
+
 </script>
 
 <div class="col-md-9">
@@ -176,6 +184,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary" onClick="editarSenha()" >Salvar</button>
+						<button type="button" class="btn btn-danger" onclick="remover()">Excluir</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					</div>
 
