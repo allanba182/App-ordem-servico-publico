@@ -18,7 +18,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="./img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
         OS - Ordem de Serviço
